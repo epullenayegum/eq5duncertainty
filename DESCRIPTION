@@ -11,3 +11,5 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: true
 RoxygenNote: 7.1.2
+URL: https://github.com/epullenayegum/eq5duncertainty
+BugReports: https://github.com/epullenayegum/eq5duncertainty/issues
