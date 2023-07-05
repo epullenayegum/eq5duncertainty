@@ -1,6 +1,6 @@
 Package: eq5duncertainty
 Title: Use Multiple Imputation to Score and Analyse EQ-5D-5L Utilities
-Version: 0.0.0.1
+Version: 0.0.1
 Authors@R: 
     person("Eleanor", "Pullenayegum", , "eleanor.pullenayegum@sickkids.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4265-1330"))
@@ -14,4 +14,4 @@ Imports: stats
 URL: https://github.com/epullenayegum/eq5duncertainty
 BugReports: https://github.com/epullenayegum/eq5duncertainty/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5.0)
