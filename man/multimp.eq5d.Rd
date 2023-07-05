@@ -20,7 +20,7 @@ multimp.eq5d(
 
 \item{userfx}{The function to be applied to the imputed utilities}
 
-\item{dimnames}{A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
+\item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
 \item{statename}{The name to be given to the 5-digit state created by the function}
 

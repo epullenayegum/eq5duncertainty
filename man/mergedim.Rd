@@ -14,7 +14,7 @@ mergedim(
 \arguments{
 \item{data}{The data containing the EQ-5D-5L responses}
 
-\item{dimnames}{A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
+\item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
 \item{statename}{The name to be given to the 5-digit state created by the function}
 

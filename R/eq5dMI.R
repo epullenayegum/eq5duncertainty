@@ -1,6 +1,6 @@
 #' Create 5-digit code indicating health state and look up in allstates
 #' @param data The data containing the EQ-5D-5L responses
-#' @param dimnames A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
+#' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
 #' @param statename The name to be given to the 5-digit state created by the function
 #' @param stateidname The name to be given to the state id column created by the function
 #' @return the original dataset provided plus two extra columns: one named statename with value equal to the five-digit code capturing the response to the EQ-5D-5L questionnaire, and another named stateidname, capturing the state id (i.e., a number from 1 to 3125) of the respondent's health state
@@ -37,7 +37,7 @@ mergedim <- function(data,dimnames=c("MO","SC","UA","PD","AD"),statename,stateid
 
 #' Add utility to data
 #' @param data The data containing the EQ-5D-5L responses
-#' @param dimnames A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
+#' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
 #' @param utilityname The name to be given to the utility corresponding to each health state
 #' @param impnum The imputation number from mu.pred3125 to use when looking up the utilities
 #' @return the original dataset provided plus one extra column named utilityname giving the utility for each corresponding to the health state
@@ -70,7 +70,7 @@ add.utility <- function(data,dimnames=c("MO","SC","UA","PD","AD"),utilityname,im
 #' @param impnum The imputation number to use
 #' @param data The data containing the EQ-5D-5L responses
 #' @param userfx The function to be applied to the imputed utilities
-#' @param dimnames A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
+#' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
 #' @param statename The name to be given to the 5-digit state created by the function
 #' @param stateidname The name to be given to the state id column created by the function
 #' @param utilityname The name to be given to the utility corresponding to each health state
@@ -115,7 +115,7 @@ singleimp <- function(impnum,data, userfx,dimnames,statename,stateidname,utility
 
 #' @param data The data containing the EQ-5D-5L responses
 #' @param userfx The function to be applied to the imputed utilities
-#' @param dimnames A character vector of lenth 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
+#' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
 #' @param statename The name to be given to the 5-digit state created by the function
 #' @param stateidname The name to be given to the state id column created by the function
 #' @param utilityname The name to be given to the utility corresponding to each health state
@@ -156,4 +156,4 @@ multimp.eq5d <- function(data, userfx,dimnames,statename,stateidname,utilityname
 
 }
 
-#' @importFrom stats rnorm var
+
