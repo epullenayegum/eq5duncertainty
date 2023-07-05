@@ -1,5 +1,5 @@
 Package: eq5duncertainty
-Title: Use Multiple Imputation to Score and Analyse EQ-5D-5L Utilities
+Title: Use Multiple Imputation to Score and Analyse 'EQ-5D-5L' Utilities
 Version: 0.0.1
 Authors@R: 
     person("Eleanor", "Pullenayegum", , "eleanor.pullenayegum@sickkids.ca", role = c("aut", "cre"),
