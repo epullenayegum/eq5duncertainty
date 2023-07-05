@@ -4,10 +4,11 @@
 #' @docType data
 #'
 #' @usage data(allstates)
-#'
+#' @name allstates
 #' @format A dataframe.
 #'
 #' @keywords datasets
+
 #'
 "allstates"
 
@@ -17,9 +18,10 @@
 #' @docType data
 #'
 #' @usage data(mu.pred3125)
-#'
+#' @name mu.pred3125
 #' @format A matrix.
 #'
 #' @keywords datasets
+
 #'
 "mu.pred3125"

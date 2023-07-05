@@ -12,8 +12,6 @@ singleimp(
   statename,
   stateidname,
   utilityname,
-  allstates = allstates,
-  mu.pred = mu.pred3125,
   ...
 )
 }
@@ -31,6 +29,8 @@ singleimp(
 \item{stateidname}{The name to be given to the state id column created by the function}
 
 \item{utilityname}{The name to be given to the utility corresponding to each health state}
+
+\item{...}{Additional arguments to userfx}
 }
 \value{
 The result of applying userfx to the dataset using a single imputed value set
@@ -45,13 +45,12 @@ colnames(EQdata.sim)<- c("MO", "SC", "UA", "PD", "AD")
 EQdata.sim <- as.data.frame(EQdata.sim)
 for (i in 1:nrow(EQdata.sim)){  EQdata.sim[i,] <- floor(runif(5, min=1, max=5))}
 EQdata.sim$age <- round(abs(sample(rnorm(500, mean=65, sd=25))))
-EQdata.sim$cancer.site <- as.factor(sample(c("breast", "prostate", "colorectal", "other"), size = 500, replace = T, prob = c(0.21, 0.19, 0.12, 0.48)))
-EQdata.sim$sex <- ifelse(EQdata.sim$cancer.site=="breast","female","male")
 head(EQdata.sim)
 
 mean.sd.fn <- function(data){
 mean.sd <- c(mean(data$utility), sd(data$utility)/sqrt(nrow(data)))
 return(list(estimate=mean.sd[1],se=mean.sd[2]))
 }
-singleimp(impnum=1,data=EQdata.sim,userfx=mean.sd.fn,dimnames=c("MO","SC","UA","PD","AD"),statename="state",stateidname="stateid",utilityname="utility")
+singleimp(impnum=1,data=EQdata.sim,userfx=mean.sd.fn,dimnames=c("MO","SC","UA","PD","AD"),
+                             statename="state",stateidname="stateid",utilityname="utility")
 }

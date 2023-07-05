@@ -8,8 +8,6 @@ add.utility(
   data,
   dimnames = c("MO", "SC", "UA", "PD", "AD"),
   utilityname,
-  allstates = allstates,
-  mu.pred = mu.pred3125,
   impnum
 )
 }
@@ -21,8 +19,6 @@ add.utility(
 \item{utilityname}{The name to be given to the utility corresponding to each health state}
 
 \item{impnum}{The imputation number from mu.pred3125 to use when looking up the utilities}
-
-\item{stateidname}{The name to be given to the state id column created by the function}
 }
 \value{
 the original dataset provided plus one extra column named utilityname giving the utility for each corresponding to the health state
@@ -37,9 +33,8 @@ colnames(EQdata.sim)<- c("MO", "SC", "UA", "PD", "AD")
 EQdata.sim <- as.data.frame(EQdata.sim)
 for (i in 1:nrow(EQdata.sim)){  EQdata.sim[i,] <- floor(runif(5, min=1, max=5))}
 EQdata.sim$age <- round(abs(sample(rnorm(500, mean=65, sd=25))))
-EQdata.sim$cancer.site <- as.factor(sample(c("breast", "prostate", "colorectal", "other"), size = 500, replace = T, prob = c(0.21, 0.19, 0.12, 0.48)))
-EQdata.sim$sex <- ifelse(EQdata.sim$cancer.site=="breast","female","male")
 head(EQdata.sim)
-EQdata.sim <- add.utility(data=EQdata.sim,dimnames=c("MO","SC","UA","PD","AD"),utilityname="utility",impnum=1)
+EQdata.sim <- add.utility(data=EQdata.sim,dimnames=c("MO","SC","UA","PD","AD"),
+                                                  utilityname="utility",impnum=1)
 head(EQdata.sim)
 }

@@ -29,6 +29,8 @@ multimp.eq5d(
 \item{utilityname}{The name to be given to the utility corresponding to each health state}
 
 \item{numimp}{The number of imputations to use}
+
+\item{...}{Additional arguments to userfx}
 }
 \value{
 The result of using multiple imputation to apply userfx to the data
@@ -43,13 +45,12 @@ colnames(EQdata.sim)<- c("MO", "SC", "UA", "PD", "AD")
 EQdata.sim <- as.data.frame(EQdata.sim)
 for (i in 1:nrow(EQdata.sim)){  EQdata.sim[i,] <- floor(runif(5, min=1, max=5))}
 EQdata.sim$age <- round(abs(sample(rnorm(500, mean=65, sd=25))))
-EQdata.sim$cancer.site <- as.factor(sample(c("breast", "prostate", "colorectal", "other"), size = 500, replace = T, prob = c(0.21, 0.19, 0.12, 0.48)))
-EQdata.sim$sex <- ifelse(EQdata.sim$cancer.site=="breast","female","male")
 head(EQdata.sim)
 
 mean.sd.fn <- function(data){
 mean.sd <- c(mean(data$utility), sd(data$utility)/sqrt(nrow(data)))
 return(list(estimate=mean.sd[1],se=mean.sd[2]))
 }
-multimp.eq5d(data=EQdata.sim,userfx=mean.sd.fn,dimnames=c("MO","SC","UA","PD","AD"),statename="state",stateidname="stateid",utilityname="utility",numimp=100)
+multimp.eq5d(data=EQdata.sim,userfx=mean.sd.fn,dimnames=c("MO","SC","UA","PD","AD"),
+            statename="state",stateidname="stateid",utilityname="utility",numimp=100)
 }

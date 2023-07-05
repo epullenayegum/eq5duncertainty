@@ -5,11 +5,13 @@ Authors@R:
     person("Eleanor", "Pullenayegum", , "eleanor.pullenayegum@sickkids.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4265-1330"))
 Description: Given a dataset with EQ-5D-5L responses, this package allows you to analyse EQ-5D-5L utilities while accounting for parameter uncertainty in the value set. Specifically, it contains 100 independent draws from the posteriod distribution of the utilities for the EQ-5D-5L in Canada. Each of these constitues one imputed value set. Given a dataset and a user-defined function, the package will score the EQ-5D-5L responses using each imputed value set, apply the function to each of the scored responses, then combine the results using Runin's Rules to yield a single estimate that accounts for parameter uncertainty in the value set.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: true
 RoxygenNote: 7.1.2
+Imports: stats
 URL: https://github.com/epullenayegum/eq5duncertainty
 BugReports: https://github.com/epullenayegum/eq5duncertainty/issues
+Depends: 
+    R (>= 2.10)
