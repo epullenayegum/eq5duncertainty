@@ -24,11 +24,11 @@ singleimp(
 
 \item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
-\item{statename}{The name to be given to the 5-digit state created by the function}
+\item{statename}{The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.}
 
-\item{stateidname}{The name to be given to the state id column created by the function}
+\item{stateidname}{The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.}
 
-\item{utilityname}{The name to be given to the utility corresponding to each health state}
+\item{utilityname}{The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.}
 
 \item{...}{Additional arguments to userfx}
 }

@@ -18,15 +18,15 @@ multimp.eq5d(
 \arguments{
 \item{data}{The data containing the EQ-5D-5L responses}
 
-\item{userfx}{The function to be applied to the imputed utilities}
+\item{userfx}{The function to be applied to the imputed utilities. This should return a list with two elements: the  first should be the estimates and the second should be the standard error estimates}
 
 \item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
-\item{statename}{The name to be given to the 5-digit state created by the function}
+\item{statename}{The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.}
 
-\item{stateidname}{The name to be given to the state id column created by the function}
+\item{stateidname}{The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.}
 
-\item{utilityname}{The name to be given to the utility corresponding to each health state}
+\item{utilityname}{The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.}
 
 \item{numimp}{The number of imputations to use}
 

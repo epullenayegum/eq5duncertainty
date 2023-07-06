@@ -16,7 +16,7 @@ add.utility(
 
 \item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
-\item{utilityname}{The name to be given to the utility corresponding to each health state}
+\item{utilityname}{The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.}
 
 \item{impnum}{The imputation number from mu.pred3125 to use when looking up the utilities}
 }

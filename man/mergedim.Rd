@@ -16,9 +16,9 @@ mergedim(
 
 \item{dimnames}{A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")}
 
-\item{statename}{The name to be given to the 5-digit state created by the function}
+\item{statename}{The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.}
 
-\item{stateidname}{The name to be given to the state id column created by the function}
+\item{stateidname}{The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.}
 }
 \value{
 the original dataset provided plus two extra columns: one named statename with value equal to the five-digit code capturing the response to the EQ-5D-5L questionnaire, and another named stateidname, capturing the state id (i.e., a number from 1 to 3125) of the respondent's health state

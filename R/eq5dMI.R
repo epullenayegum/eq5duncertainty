@@ -1,8 +1,8 @@
 #' Create 5-digit code indicating health state and look up in allstates
 #' @param data The data containing the EQ-5D-5L responses
 #' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
-#' @param statename The name to be given to the 5-digit state created by the function
-#' @param stateidname The name to be given to the state id column created by the function
+#' @param statename The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.
+#' @param stateidname The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.
 #' @return the original dataset provided plus two extra columns: one named statename with value equal to the five-digit code capturing the response to the EQ-5D-5L questionnaire, and another named stateidname, capturing the state id (i.e., a number from 1 to 3125) of the respondent's health state
 #' @export
 #' @examples
@@ -38,7 +38,7 @@ mergedim <- function(data,dimnames=c("MO","SC","UA","PD","AD"),statename,stateid
 #' Add utility to data
 #' @param data The data containing the EQ-5D-5L responses
 #' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
-#' @param utilityname The name to be given to the utility corresponding to each health state
+#' @param utilityname The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.
 #' @param impnum The imputation number from mu.pred3125 to use when looking up the utilities
 #' @return the original dataset provided plus one extra column named utilityname giving the utility for each corresponding to the health state
 #' @export
@@ -71,9 +71,9 @@ add.utility <- function(data,dimnames=c("MO","SC","UA","PD","AD"),utilityname,im
 #' @param data The data containing the EQ-5D-5L responses
 #' @param userfx The function to be applied to the imputed utilities
 #' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
-#' @param statename The name to be given to the 5-digit state created by the function
-#' @param stateidname The name to be given to the state id column created by the function
-#' @param utilityname The name to be given to the utility corresponding to each health state
+#' @param statename The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.
+#' @param stateidname The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.
+#' @param utilityname The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.
 #' @param impnum The imputation number from mu.pred3125 to use when looking up the utilities
 #' @param ... Additional arguments to userfx
 #' @return The result of applying userfx to the dataset using a single imputed value set
@@ -114,11 +114,11 @@ singleimp <- function(impnum,data, userfx,dimnames,statename,stateidname,utility
 #' Create multiply imputed utilities, apply a user-defined function, and combine the results using Rubin's Rules
 
 #' @param data The data containing the EQ-5D-5L responses
-#' @param userfx The function to be applied to the imputed utilities
+#' @param userfx The function to be applied to the imputed utilities. This should return a list with two elements: the  first should be the estimates and the second should be the standard error estimates
 #' @param dimnames A character vector of length 5 giving the names in the dataset of the columns corresponding to the responses to mobility, self-care, usual activities, pain/discomfort and anxiety/depression, respectively. Defaults to c("MO","SC","UA","PD","AD")
-#' @param statename The name to be given to the 5-digit state created by the function
-#' @param stateidname The name to be given to the state id column created by the function
-#' @param utilityname The name to be given to the utility corresponding to each health state
+#' @param statename The name to be given to the 5-digit state created by the function. This should be distinct from the other column names in the dataset.
+#' @param stateidname The name to be given to the state id column created by the function. This should be distinct from the other column names in the dataset.
+#' @param utilityname The name to be given to the utility corresponding to each health state. This should be distinct from the other column names in the dataset.
 #' @param numimp The number of imputations to use
 #' @param ... Additional arguments to userfx
 #' @return The result of using multiple imputation to apply userfx to the data
